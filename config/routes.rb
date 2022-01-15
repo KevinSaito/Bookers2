@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'books/rails'
-  get 'books/db:migrate'
+
   get 'homes/top'
   root to: "homes#top"
   devise_for :users
