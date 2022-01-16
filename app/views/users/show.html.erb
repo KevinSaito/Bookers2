@@ -1,0 +1,12 @@
+<div>
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_profile_image("100x100") %>
+</div>
+
+<% @books.each do |book| %>
+<div>
+  <p><%= image_tag book.user.get_profile_image("100x100") %></p>
+  <p>Title：<%= books.shop_name %></p>
+  <p>Opinion：<%= post_image.caption %></p>
+</div>
+<% end %>
