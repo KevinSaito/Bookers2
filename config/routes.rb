@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :books, only:[:create, :show, :index, :edit]
 
-
+  resources :post_image, only:[:new, :show, :index]
 
   resources :users, only:[:update, :show, :index, :edit]
 
