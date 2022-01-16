@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'post_image/new'
+  get 'post_image/index'
+  get 'post_image/show'
   root to: "homes#top"
   devise_for :users
 
