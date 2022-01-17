@@ -1,12 +1,25 @@
-  <h2>User info</h2>
-  <%= form_with model: @user, local:true do |f| %>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <table class='table'>
+
+  <tr><%= current_user.profile_image %></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= current_user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= current_user.introduction %></th>
+  </tr>
   
-    <h4>Name</h4>
-  
-  
-  
-  
-  
+</table>
+
+<!--<%= form_with model: @user, local:true do |f| %>-->
+  <!--<p><%= link_to 'Edit', edit_user_path %></p>-->
+<!--<% end %>-->
+
+
   <h2>New book</h2>
   <%= form_with model: @book, local:true do |f| %>
 
