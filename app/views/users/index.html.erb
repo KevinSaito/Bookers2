@@ -1,1 +1,22 @@
-<h1>User一覧・詳細</h1>
+<h1>Users</h1>
+<table>
+    <thead>
+        <th>image</th>
+        <th>name</th>
+        <th colspan="3"></th>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+
+      <tr>
+        <td><%= image_tag user.get_profile_image("100x100") %></td>
+        <td><%= user.name %></td>
+
+        <td><%= link_to "Show", user_path(user.id) %></td>
+      </tr>
+
+    <% end %>
+    </tbody>
+</table>
+
+
