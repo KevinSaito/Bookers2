@@ -30,7 +30,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to user_path
+    redirect_to current_user
   end
 
   def destroy
