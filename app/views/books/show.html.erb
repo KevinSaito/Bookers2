@@ -1,3 +1,4 @@
+<%= render 'books/list', book: @books, user: @user %>
 <%= flash[:notice] %>
 <h1>Books Detail</h1>
 <table>
@@ -18,5 +19,5 @@
 
     </tbody>
     <%= link_to "Edit", edit_book_path(@book.id) %>
-    <%= link_to "Back", books_path %>
+    <%= link_to "Back", user_path(@user.id) %>
 </table>
