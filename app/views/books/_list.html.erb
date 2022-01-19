@@ -1,18 +1,22 @@
-<div class='row'>
-  <div class='col-md-3'>
-    <h2>User info</h2>
-    <table class='table'>
-      <tr><%= image_tag user.get_profile_image("100x100") %></tr>
-      <tr>
-	      <th>name</th>
-	      <th><%= user.name %></th>
-      </tr>
-      <tr>
-	      <th>introduction</th>
-	      <th><%= user.introduction %></th>
-      </tr>
-    </table>
-    <%= link_to "edit", edit_user_path(user.id)%>
+<main>
+  <div class='container px-5 px-sm-0'>
+    <div class='row'>
+      <div class='col-md-3'>
+      <h2>User info</h2>
+      <table class='table'>
+        <tr><%= image_tag user.get_profile_image("63x63") %></tr>
+        <tr>
+	        <th>name</th>
+	        <th><%= user.name %></th>
+        </tr>
+        <tr>
+	        <th>introduction</th>
+	        <th><%= user.introduction %></th>
+        </tr>
+      </table>
+    <div class="row">
+      <%= link_to "edit", edit_user_path(user.id)%>
+    </div>
     <h2>New Book</h2>
     <%= form_with model:book, local:true do |f| %>
       <h4>Title</h4>
@@ -21,5 +25,7 @@
       <%= f.text_area :body %>
       <%= f.submit 'Create Book' %>
     <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</main>
