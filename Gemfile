@@ -50,7 +50,6 @@ group :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
-  gem 'selenium-webdriver'
 
   # Easy installation and use of web drivers to run system tests with browsers
 
