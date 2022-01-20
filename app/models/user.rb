@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   validates :name, presence: true, length: {minimum:2, maximum:20}
-  validates :introduction, presence: true, length: {maximum:50}
+  validates :introduction, length: {maximum:50}
   def get_profile_image(size)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/sample-author1.jpg')
