@@ -1,15 +1,17 @@
 class BooksController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
-  
+
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    @books = Book.all
-    if@book.save
-      redirect_to book_path(@book.id)
+    if @book.save
       flash[:notice] = "You have created book successfully"
+      redirect_to book_path(@book.id)
     else
-      render :index
+      @books =Book.all
+      @newbook = Book.new
+      @infouser = current_user
+      render:index
     end
   end
 
@@ -20,7 +22,7 @@ class BooksController < ApplicationController
 
   def index
     @books =Book.all
-    @newbook = Book.new
+    @book = Book.new
     @infouser = current_user
   end
 

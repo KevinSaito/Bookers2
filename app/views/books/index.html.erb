@@ -1,7 +1,15 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= flash[:notice] %>
 <div class='container'>
   <div class='row'>
-    <%= render 'books/list', book: @newbook, user: @infouser %>
+    <%= render 'books/list', book: @book, user: @infouser %>
     <div class='col-md-8 offset-md-1'>
     <h1>Books</h1>
     <table class='table'>
