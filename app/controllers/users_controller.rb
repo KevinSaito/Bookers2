@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+ before_action :baria_user, only: [:edit, :destroy, :update]
 
   def show
     @user = User.find(params[:id])
@@ -29,5 +30,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
+  end
+  def baria_user
+    unless User.find(params[:id]) == current_user
+        render:show
+    end
   end
 end
