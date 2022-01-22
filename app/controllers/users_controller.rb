@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
  before_action :baria_user, only: [:edit, :destroy, :update]
+ before_action :correct_user, only: [:edit, :update]
   def show
     @user = User.find(params[:id])
-    @newbook = Book.new
+    @book = Book.new
     @books = @user.books.all
   end
 
@@ -34,5 +35,12 @@ class UsersController < ApplicationController
     unless User.find(params[:id]) == current_user
         render :show
     end
+  end
+  private
+  def correct_user
+     user = User.find(params[:id])
+     if current_user != user
+       redirect_to user_path
+     end
   end
 end
