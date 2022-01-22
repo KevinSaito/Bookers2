@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :baria_user, only: [:edit, :destroy, :update]
-
+  before_action :authenticate_user!
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
