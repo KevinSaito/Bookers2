@@ -1,7 +1,7 @@
 <%= flash[:notice] %>
 <div class='container'>
   <div class='row'>
-    <%= render 'books/list', book: @book, user: @user %>
+    <%= render 'books/list', book: @newbook, user: @user %>
     <div class='col-md-8 offset-md-1'>
     <h2>Book detail</h2>
     <table class='table'>
@@ -27,6 +27,7 @@
               <% end %>
             </td>
             <td><%= @book.body %></td>
+            <td></td>
             <% if @user.id == current_user.id %>
             <td>
               <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
